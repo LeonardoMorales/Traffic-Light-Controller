@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <style>
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    .form-check-label {
+      padding-left: 20px;
+    }
+
+    .container:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    .container input:checked~.checkmark {
+      background-color: #2196F3;
+    }
+
+    .container input:checked~#checkmark1 {
+      background-color: #4CBB17;
+    }
+
+    .container input:checked~#checkmark2 {
+      background-color: #FCE205;
+    }
+
+    .container input:checked~#checkmark3 {
+      background-color: #E60000;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .container input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .semaforo {
+      height: 80px;
+      background: #E6E6E6;
+    }
+
+  </style>
+  <title>Traffic Light</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-10 col-lg-10 slider">
+        <br>
+        <h2 class="text-center"><b>Trafic Light</b></h2>
+        <br>
+      </div>
+    </div>
+    <fieldset class="form-group">
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="off"
+              color="green" checked>
+            <label class="form-check-label" for="gridRadios1">
+              Turn off
+            </label>
+            <span class="checkmark" id="checkmark0"></span>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="green" checked>
+            <label class="form-check-label" for="gridRadios2">
+              Green
+            </label>
+            <span class="checkmark" id="checkmark1"></span>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="yellow">
+            <label class="form-check-label" for="gridRadios3">
+              Yellow
+            </label>
+            <span class="checkmark" id="checkmark2"></span>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="red">
+            <label class="form-check-label" for="gridRadios4">
+              Red
+            </label>
+            <span class="checkmark" id="checkmark3"></span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <form action="">
+            <button id="enviar" type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="js/semaphore.js"></script>
+</body>
+</html>
