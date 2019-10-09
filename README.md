@@ -4,7 +4,7 @@ A simple traffic light controller developed with the ESP32 microcontroller. In w
 This repository contains three folders
  * APP folder
  
- Here you can clone the Android app and install on your phone using Android Studio
+    Here you can clone the Android app and install on your phone using Android Studio
   
   * Hardware
     
